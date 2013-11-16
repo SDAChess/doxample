@@ -1,0 +1,10 @@
+autom4te.cache/
+config.h
+config.log
+config.status
+.deps/
+doxample
+doxample.o
+doxygen-doc/
+Makefile
+stamp-h1

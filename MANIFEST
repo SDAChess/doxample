@@ -1,0 +1,15 @@
+./acinclude.m4
+./aminclude.am
+./AUTHORS
+./bootstrap
+./cleanup
+./configure.ac
+./doxample.c
+./doxygen.cfg
+./.gitignore
+./LICENSE
+./Makefile.am
+./MANIFEST
+./NEWS
+./README.md
+./test.sh

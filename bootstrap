@@ -1,0 +1,29 @@
+#! /bin/sh
+
+# Copyright (C) 2004 Oren Ben-Kiki.
+# This library is distributed under an MIT license.
+# See the LICENSE file for details.
+
+# Bootstrap the autotools after cleanup stripped the directory to the bare
+# minimum. You don't need to run this unless you tinker with the autotools.
+
+ln -sf NEWS ChangeLog
+ln -sf LICENSE COPYING
+ln -sf README.md README
+
+echo "auxdir..."
+rm -rf auxdir
+mkdir auxdir \
+    || { echo "mkdir auxdir failed"; exit 1; }
+echo "aclocal..."
+aclocal \
+    || { echo "aclocal failed"; exit 1; }
+echo "autoheader..."
+autoheader --warnings=all \
+    || { echo "autoheader failed"; exit 1; }
+echo "automake..."
+automake --warnings=all --gnu --add-missing --copy \
+    || { echo "automake failed"; exit 1; }
+echo "autoconf..."
+autoconf --warnings=all \
+    || { echo "autoconf failed"; exit 1; }
